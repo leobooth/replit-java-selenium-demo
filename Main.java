@@ -15,10 +15,15 @@ class Main {
   public static void main(String[] args) throws Exception {
     
 	  ChromeOptions options = new ChromeOptions();
-    options.addArguments(
+    // options.addArguments(
+    //   "--no-sandbox",
+    //   "--disable-dev-shm-usage",
+    //   "--start-maximized"
+    // );
+      options.addArguments(
       "--no-sandbox",
       "--disable-dev-shm-usage",
-      "--start-maximized"
+      "--headless"
     );
 	
     ChromeDriver driver = new ChromeDriver(options);
@@ -27,7 +32,9 @@ class Main {
     /* point Selenium driver to the webpage at address 
      * "https://seleniumpracticepages.leobooth.repl.co/"
     */
-    driver.get("https://seleniumpracticepages.leobooth.repl.co/");
+    String webpage = "https://seleniumpracticepages.leobooth.repl.co/";
+    driver.get(webpage);
+    System.out.println("view practice webpage at: " + webpage);
 
     // print page title to console
     System.out.println("page title: " + driver.getTitle());
