@@ -15,15 +15,10 @@ class Main {
   public static void main(String[] args) throws Exception {
     
 	  ChromeOptions options = new ChromeOptions();
-    // options.addArguments(
-    //   "--no-sandbox",
-    //   "--disable-dev-shm-usage",
-    //   "--start-maximized"
-    // );
-      options.addArguments(
+    options.addArguments(
       "--no-sandbox",
       "--disable-dev-shm-usage",
-      "--headless"
+      "--start-maximized"
     );
 	
     ChromeDriver driver = new ChromeDriver(options);
